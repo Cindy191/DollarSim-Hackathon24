@@ -1,0 +1,28 @@
+.Logo{
+  width: clamp(50px,100px, 400px);
+  height: clamp(50px,100px, 400px);
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-item{
+  margin-left: clamp(10px, 50px, 100px);
+  margin-right: clamp(10px, 50px, 100px);
+}
+body{
+  font-family: "JetBrains Mono";
+  background-color: #86A7FC;
+  color: white;
+}
+.transactions{
+  background-color: #FFDD95;
+  border-radius: 10px 10px 0px 0px;
+  padding-bottom: 100%; 
+}
+.balance{
+  text-align: center;
+}
