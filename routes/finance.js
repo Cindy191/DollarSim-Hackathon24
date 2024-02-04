@@ -60,6 +60,23 @@ router.post('/newJobPosting', async (req,res) => {
     }
 })
 
+router.put('/updateJobPosting/:id', async (req,res) => {
+    try {
+        const jobPostingQuery = JobPosting.findById(req.params.id)
+        const jobPosting = await JobPosting.findOneAndUpdate(jobPostingQuery, {
+            "title": req.body.title,
+            "salary": req.body.salary
+        },
+        {
+            new: true //returns modified instead of original, so updated json object is given instead of original
+        }
+        )
+        res.status(200).json(jobPosting)     
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
 router.delete('/deleteJobPosting/:id', async (req, res) => {
     try {
         const jobPostingQuery = JobPosting.findById(req.params.id)
